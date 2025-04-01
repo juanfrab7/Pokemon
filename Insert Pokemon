@@ -1786,3 +1786,41 @@ INSERT INTO [Pokemons.Habilidades] (IdPokemon, IdHabilidad) VALUES
 INSERT INTO [Pokemons.Habilidades] (IdPokemon, IdHabilidad) VALUES
 (151, 32), -- Psíquico
 (151, 13); -- Desenrollar
+
+-- ENTRENADORES -----------------------------------
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (1, 'Ash', 'Ketchum', 'Ash', 'ashketchum@email.com', 'pikachu123', '1990-05-22');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (2, 'Misty', '', 'Misty', 'mistywaterflower@email.com', 'starmie456', '1992-07-07');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (3, 'Brock', '', 'Brock', 'brockrock@email.com', 'geodude789', '1991-04-01');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (4, 'Gary', 'Oak', 'Gary', 'garyoak@email.com', 'eevee234', '1989-12-05');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (5, 'Jessie', '', 'Jessie', 'jessie@email.com', 'meowth567', '1990-10-18');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (6, 'James', '', 'James', 'james@email.com', 'koffing890', '1988-06-30');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (7, 'Giovanni', '', 'Giovanni', 'giovanni@email.com', 'persian123', '1975-03-15');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (8, 'Lt.', 'Surge', 'Lt.', 'lidersurge@email.com', 'raichu456', '1983-09-03');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (9, 'Erika', 'Ciudad Azulona', 'Erika', 'lidererika@email.com', 'victreebel789', '1984-12-18');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (10, 'Koga', 'Ciudad Fucsia', 'Koga', 'liderkoga@email.com', 'weezing123', '1981-10-27');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (11, 'Sabrina', 'Ciudad Azafrán', 'Sabrina', 'lidersabrina@email.com', 'alakazam456', '1979-07-14');
+
+INSERT INTO Entrenadores (Id, Nombre, Apellido, NickName, Email, Clave, FechaNacimiento)
+VALUES (12, 'Blaine', 'Isla Canela', 'Blaine', 'liderblaine@email.com', 'magmar789', '1977-04-22');
