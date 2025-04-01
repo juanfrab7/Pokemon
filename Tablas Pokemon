@@ -1,0 +1,63 @@
+CREATE TABLE Pokemons (
+  Id int PRIMARY KEY, 
+  Nombre VARCHAR(50), 
+  Numero int, 
+  Bio VARCHAR(250), 
+  Altura FLOAT, 
+  Peso FLOAT, 
+  ImagenUrl VARCHAR(250), 
+  IdEvolucion int
+);
+
+CREATE TABLE [Pokemons.Tipos] (
+    IdPokemon_Tipo int PRIMARY KEY IDENTITY(1,1),
+    IdPokemon int not null,
+    IdElemento int
+);
+
+CREATE TABLE [Pokemons.Debilidades] (
+    IdPokemon_Debilidad int PRIMARY KEY IDENTITY(1,1),
+    IdPokemon int not null,
+    IdElemento int
+);
+
+create table Habilidades (
+    Id int not null,
+    Nombre varchar(50),
+    Descripcion varchar(250),
+    IdTipo int,
+    CONSTRAINT PK_Habilidad PRIMARY KEY (Id)
+);
+
+create table Entrenadores (
+    Id int not null,
+    Nombre varchar(50),
+    Apellido varchar(50),
+    NickName varchar(50),
+    Email varchar(100),
+    Clave varchar(25),
+    FechaNacimiento date
+)
+
+create table [Pokemons.Habilidades] (
+    Id int not null IDENTITY(1,1),
+    IdPokemon int,
+    IdHabilidad int,
+    CONSTRAINT PK_Pokemon_Habilidad PRIMARY KEY (Id),
+    CONSTRAINT FK_PokeHabilidad_Habilidades FOREIGN KEY (IdHabilidad) REFERENCES Habilidades(Id)
+);
+
+CREATE TABLE Entrenadores (
+  Id int not null,
+  Nombre varchar(50), 
+  Apellido varchar(50), 
+  NickName varchar(50), 
+  Email varchar(50), 
+  Clave varchar(50), 
+  FechaNacimiento date
+);
+
+create table Elementos (
+    Id int PRIMARY KEY,
+    Descripcion varchar(50)
+);
