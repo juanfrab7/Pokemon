@@ -9,6 +9,11 @@ CREATE TABLE Pokemons (
   IdEvolucion int
 );
 
+CREATE TABLE Elementos (
+    Id int PRIMARY KEY,
+    Descripcion varchar(50)
+);
+
 CREATE TABLE [Pokemons.Tipos] (
     IdPokemon_Tipo int PRIMARY KEY IDENTITY(1,1),
     IdPokemon int not null,
