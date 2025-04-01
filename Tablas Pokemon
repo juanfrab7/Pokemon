@@ -79,10 +79,10 @@ CREATE TABLE Medallas (
 );
 
 CREATE TABLE Gimnasios (
-  Id, 
-  Nombre, 
-  IdCiudad, 
-  IdMedalla, 
-  IdEntrenador,
+  Id int, 
+  Nombre varchar(50), 
+  IdCiudad int, 
+  IdMedalla int, 
+  IdEntrenador int,
   CONSTRAINT PK_Gimnasios PRIMARY KEY (Id)
 );
