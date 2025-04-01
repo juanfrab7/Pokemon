@@ -38,16 +38,6 @@ create table Habilidades (
     CONSTRAINT PK_Habilidad PRIMARY KEY (Id)
 );
 
-create table Entrenadores (
-    Id int not null,
-    Nombre varchar(50),
-    Apellido varchar(50),
-    NickName varchar(50),
-    Email varchar(100),
-    Clave varchar(25),
-    FechaNacimiento date
-)
-
 create table [Pokemons.Habilidades] (
     Id int not null IDENTITY(1,1),
     IdPokemon int,
