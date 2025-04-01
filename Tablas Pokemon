@@ -21,13 +21,17 @@ CREATE TABLE Elementos (
 CREATE TABLE [Pokemons.Tipos] (
     IdPokemon_Tipo int PRIMARY KEY IDENTITY(1,1),
     IdPokemon int not null,
-    IdElemento int
+    IdElemento int,
+    CONSTRAINT FK_Relacion_Poke_Elemento FOREIGN KEY (IdPokemon) REFERENCES Pokemons(Id),
+    CONSTRAINT FK_Relacion_Elemento_Poke FOREIGN KEY (IdElemento) REFERENCES Elementos(Id)
 );
 
 CREATE TABLE [Pokemons.Debilidades] (
     IdPokemon_Debilidad int PRIMARY KEY IDENTITY(1,1),
     IdPokemon int not null,
-    IdElemento int
+    IdElemento int,
+    CONSTRAINT FK_Relacion_Poke_Debilidad FOREIGN KEY (IdPokemon) REFERENCES Pokemons(Id),
+    CONSTRAINT FK_Relacion_Elemento_Debilidad FOREIGN KEY (IdElemento) REFERENCES Elementos(Id)
 );
 
 create table Habilidades (
@@ -36,14 +40,16 @@ create table Habilidades (
     Descripcion varchar(250),
     IdTipo int,
     CONSTRAINT PK_Habilidad PRIMARY KEY (Id)
+    
 );
 
-create table [Pokemons.Habilidades] (
+CREATE TABLE [Pokemons.Habilidades] (
     Id int not null IDENTITY(1,1),
     IdPokemon int,
     IdHabilidad int,
     CONSTRAINT PK_Pokemon_Habilidad PRIMARY KEY (Id),
-    CONSTRAINT FK_PokeHabilidad_Habilidades FOREIGN KEY (IdHabilidad) REFERENCES Habilidades(Id)
+    CONSTRAINT FK_PokeHabilidad_Habilidades FOREIGN KEY (IdHabilidad) REFERENCES Habilidades(Id),
+    CONSTRAINT FK_Habilidad_Pokemon FOREIGN KEY (IdPokemon) REFERENCES Pokemons(Id)
 );
 
 CREATE TABLE Entrenadores (
@@ -62,7 +68,9 @@ CREATE TABLE [Entrenadores.Pokemons] (
   IdEntrenador int, 
   IdPokemon int, 
   Nombre varchar(50),
-  CONSTRAINT PK_Entrenadores_Pokemons PRIMARY KEY (Id)
+  CONSTRAINT PK_Entrenadores_Pokemons PRIMARY KEY (Id),
+  CONSTRAINT FK_Relacion_Entrenador FOREIGN KEY (IdEntrenador) REFERENCES Entrenadores (Id)
+  CONSTRAINT FK_Relacion_Pokemon FOREIGN KEY (IdPokemon) REFERENCES Pokemons (Id)
 );
 
 CREATE TABLE Ciudades (
@@ -84,5 +92,8 @@ CREATE TABLE Gimnasios (
   IdCiudad int, 
   IdMedalla int, 
   IdEntrenador int,
-  CONSTRAINT PK_Gimnasios PRIMARY KEY (Id)
+  CONSTRAINT PK_Gimnasios PRIMARY KEY (Id),
+  CONSTRAINT FK_Gimnasios_Ciudades FOREIGN KEY (IdCiudad) REFERENCES Ciudades(Id),
+  CONSTRAINT FK_Gimnasios_Entrenadores FOREIGN KEY (IdEntrenador) REFERENCES Entrenadores(Id),
+  CONSTRAINT FK_Gimnasios_Medallas FOREIGN KEY (IdMedalla) REFERENCES Medallas(Id)
 );
