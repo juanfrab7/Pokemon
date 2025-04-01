@@ -38,16 +38,6 @@ CREATE TABLE Entrenadores (
   CONSTRAINT PK_Entrenadores PRIMARY KEY (Id)
 );
 
-CREATE TABLE [Entrenadores.Pokemons] (
-  Id int, 
-  IdEntrenador int, 
-  IdPokemon int, 
-  Nombre varchar(50),
-  CONSTRAINT PK_Entrenadores_Pokemons PRIMARY KEY (Id),
-  CONSTRAINT FK_Relacion_Entrenador FOREIGN KEY (IdEntrenador) REFERENCES Entrenadores (Id),
-  CONSTRAINT FK_Relacion_Pokemon FOREIGN KEY (IdPokemon) REFERENCES Pokemons (Id)
-);
-
 CREATE TABLE Ciudades (
   Id int,
   Nombre varchar(50),
