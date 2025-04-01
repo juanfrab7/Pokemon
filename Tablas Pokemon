@@ -1,3 +1,7 @@
+CREATE DATABASE MundoPokemonDB;
+
+USE MundoPokemonDB;
+
 CREATE TABLE Pokemons (
   Id int PRIMARY KEY, 
   Nombre VARCHAR(50), 
