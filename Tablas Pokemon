@@ -53,6 +53,36 @@ CREATE TABLE Entrenadores (
   NickName varchar(50), 
   Email varchar(50), 
   Clave varchar(50), 
-  FechaNacimiento date
+  FechaNacimiento date,
+  CONSTRAINT PK_Entrenadores PRIMARY KEY (Id)
 );
 
+CREATE TABLE [Entrenadores.Pokemons] (
+  Id int, 
+  IdEntrenador int, 
+  IdPokemon int, 
+  Nombre varchar(50),
+  CONSTRAINT PK_Entrenadores_Pokemons PRIMARY KEY (Id)
+);
+
+CREATE TABLE Ciudades (
+  Id int,
+  Nombre varchar(50),
+  CONSTRAINT PK_Ciudades PRIMARY KEY (Id)
+);
+
+CREATE TABLE Medallas (
+  Id int, 
+  Nombre varchar(50), 
+  ImagenUrl varchar(250),
+  CONSTRAINT PK_Medallas PRIMARY KEY (Id)
+);
+
+CREATE TABLE Gimnasios (
+  Id, 
+  Nombre, 
+  IdCiudad, 
+  IdMedalla, 
+  IdEntrenador,
+  CONSTRAINT PK_Gimnasios PRIMARY KEY (Id)
+);
